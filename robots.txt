@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://northerngeek.in/sitemap.xml
