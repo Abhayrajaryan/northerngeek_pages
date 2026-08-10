@@ -110,6 +110,22 @@
     initCarousel(wrap);
   });
 
+  /* ---------- Fade-in on scroll ---------- */
+  var fadeEls = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window && fadeEls.length) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('visible');
+          obs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(function (el) { obs.observe(el); });
+  } else {
+    fadeEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
   /* ---------- Simple form validation ----------
      Forms submit natively to the form backend (FormSubmit).
      This JS only adds friendlier inline validation; it never builds mailto.
@@ -187,6 +203,9 @@
     modal.setAttribute('aria-hidden', 'true');
     var closeBtn = modal.querySelector('.modal-close');
     if (closeBtn) closeBtn.addEventListener('click', function () { closeModal(modal); });
+    modal.querySelectorAll('[data-modal-close]').forEach(function (c) {
+      c.addEventListener('click', function () { closeModal(modal); });
+    });
     modal.addEventListener('click', function (e) {
       if (e.target === modal) closeModal(modal);
     });
