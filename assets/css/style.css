@@ -401,6 +401,15 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 700; letter-spacing: -0.02em; l
   transition: background-color .15s, transform .15s;
 }
 .carousel-dot.active { background: var(--blue); transform: scale(1.25); }
+.carousel-group { display: block; }
+
+/* Two-column split that collapses to one column on small screens */
+.split-lg { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2.5rem; align-items: center; }
+@media (max-width: 900px) {
+  .split-lg { grid-template-columns: 1fr; }
+}
+
+
 
 /* ============ HRIS: showcase with phone mockup ============ */
 .showcase-wrap {
@@ -479,6 +488,50 @@ h1, h2, h3, h4 { color: var(--ink); font-weight: 700; letter-spacing: -0.02em; l
 .last-updated { display: inline-block; font-size: 0.85rem; color: var(--muted); background: var(--bg-soft); border: 1px solid var(--border-soft); padding: 0.3rem 0.85rem; border-radius: 6px; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* ============ Modal ============ */
+body.modal-open { overflow: hidden; }
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: rgba(15, 23, 42, 0.55);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.modal.active { display: flex; }
+.modal-dialog {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem 1.75rem;
+  position: relative;
+  margin: auto 0;
+}
+.modal-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+.modal-header h2 { font-size: 1.4rem; margin: 0; }
+.modal-close {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+.modal-close:hover { border-color: var(--blue); color: var(--blue); }
+
 
 
 

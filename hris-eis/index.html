@@ -55,7 +55,7 @@
             <h1>Enterprise HR &amp; <span class="hl">Employee Information System</span></h1>
             <p>Cloud-based platform that streamlines attendance, payroll, leave, recruitment, and workforce management for growing businesses, schools, hospitals, and enterprises.</p>
             <div class="hero-cta">
-              <a class="btn btn-primary btn-lg" href="../contact/#demo">Book a Free Demo</a>
+              <button type="button" class="btn btn-primary btn-lg" data-modal-open="demoModal">Book a Free Demo</button>
               <a class="btn btn-secondary btn-lg" href="#modules">View Modules</a>
             </div>
             <div class="hero-trust" aria-label="Key capabilities">
@@ -142,22 +142,24 @@
             <p class="label">Desktop</p>
             <!--
               DESKTOP SCREENSHOTS
-              UPLOAD SCREENSHOTS TO:  /images/eis-web/
-              THEN UPDATE THE  src  BELOW. Current images use the provided files:
+              SCREENSHOT FILES LIVE IN:  /images/eis-web/
+              UPDATE THE  src  BELOW TO SWAP. Currently using the provided files:
               employees.png, attendances.png, leaves.png, report.png
             -->
-            <div class="carousel" data-carousel tabindex="0" aria-label="Desktop application screenshots">
-              <div class="carousel-track">
-                <div class="carousel-slide"><img src="../images/eis-web/employees.png" alt="HRIS employee list" loading="lazy"><span class="carousel-caption">Employees</span></div>
-                <div class="carousel-slide"><img src="../images/eis-web/attendances.png" alt="HRIS attendance screen" loading="lazy"><span class="carousel-caption">Attendance</span></div>
-                <div class="carousel-slide"><img src="../images/eis-web/leaves.png" alt="HRIS leave management" loading="lazy"><span class="carousel-caption">Leave</span></div>
-                <div class="carousel-slide"><img src="../images/eis-web/report.png" alt="HRIS reports" loading="lazy"><span class="carousel-caption">Reports</span></div>
+            <div class="carousel-group" data-carousel tabindex="0" aria-label="Desktop application screenshots">
+              <div class="carousel">
+                <div class="carousel-track">
+                  <div class="carousel-slide"><img src="../images/eis-web/employees.png" alt="HRIS employee list" loading="lazy"><span class="carousel-caption">Employees</span></div>
+                  <div class="carousel-slide"><img src="../images/eis-web/attendances.png" alt="HRIS attendance screen" loading="lazy"><span class="carousel-caption">Attendance</span></div>
+                  <div class="carousel-slide"><img src="../images/eis-web/leaves.png" alt="HRIS leave management" loading="lazy"><span class="carousel-caption">Leave</span></div>
+                  <div class="carousel-slide"><img src="../images/eis-web/report.png" alt="HRIS reports" loading="lazy"><span class="carousel-caption">Reports</span></div>
+                </div>
               </div>
-            </div>
-            <div class="carousel-arrows">
-              <button class="carousel-btn carousel-prev" aria-label="Previous desktop slide" type="button">&#8592;</button>
-              <div class="carousel-dots"></div>
-              <button class="carousel-btn carousel-next" aria-label="Next desktop slide" type="button">&#8594;</button>
+              <div class="carousel-arrows">
+                <button class="carousel-btn carousel-prev" aria-label="Previous desktop slide" type="button">&#8592;</button>
+                <div class="carousel-dots"></div>
+                <button class="carousel-btn carousel-next" aria-label="Next desktop slide" type="button">&#8594;</button>
+              </div>
             </div>
           </div>
 
@@ -166,14 +168,14 @@
             <p class="label" style="text-align:center;">Mobile App</p>
             <!--
               MOBILE SCREENSHOTS
-              UPLOAD SCREENSHOTS TO:  /images/eis-app/
-              THEN UPDATE THE  src  BELOW. Current images use the provided files:
+              SCREENSHOT FILES LIVE IN:  /images/eis-app/
+              UPDATE THE  src  BELOW TO SWAP. Currently using the provided files:
               dashboard.jpeg, punc-in.jpeg, calander.jpeg, leaves.jpeg, employee-info.jpeg
             -->
-            <div class="phone-device">
-              <div class="phone-notch" aria-hidden="true"></div>
-              <div class="phone-screen">
-                <div class="carousel" data-carousel tabindex="0" aria-label="Mobile app screenshots">
+            <div class="carousel-group" data-carousel tabindex="0" aria-label="Mobile app screenshots">
+              <div class="phone-device">
+                <div class="phone-notch" aria-hidden="true"></div>
+                <div class="phone-screen">
                   <div class="carousel-track">
                     <div class="carousel-slide"><img src="../images/eis-app/dashboard.jpeg" alt="Mobile app dashboard" loading="lazy"></div>
                     <div class="carousel-slide"><img src="../images/eis-app/punc-in.jpeg" alt="Mobile app punch in" loading="lazy"></div>
@@ -183,11 +185,11 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="carousel-arrows">
-              <button class="carousel-btn carousel-prev" aria-label="Previous mobile slide" type="button">&#8592;</button>
-              <div class="carousel-dots"></div>
-              <button class="carousel-btn carousel-next" aria-label="Next mobile slide" type="button">&#8594;</button>
+              <div class="carousel-arrows">
+                <button class="carousel-btn carousel-prev" aria-label="Previous mobile slide" type="button">&#8592;</button>
+                <div class="carousel-dots"></div>
+                <button class="carousel-btn carousel-next" aria-label="Next mobile slide" type="button">&#8594;</button>
+              </div>
             </div>
           </div>
         </div>
@@ -301,7 +303,7 @@
           <h2>Ready to transform your HR operations?</h2>
           <p>Schedule a personalised demo walkthrough tailored to your business needs.</p>
           <div class="cta-actions">
-            <a class="btn btn-primary btn-lg" href="../contact/#demo">Request a Free Demo</a>
+            <button type="button" class="btn btn-primary btn-lg" data-modal-open="demoModal">Request a Free Demo</button>
             <a class="btn btn-secondary btn-lg" href="../contact/">Contact Us</a>
           </div>
         </div>

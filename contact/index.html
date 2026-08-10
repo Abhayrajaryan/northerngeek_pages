@@ -57,6 +57,19 @@
       <div class="container">
         <div class="contact-layout">
           <div>
+            <span class="eyebrow">Contact</span>
+            <h2 style="font-size:1.7rem;margin-bottom:.75rem;">Let's build something together.</h2>
+            <p class="section-sub" style="margin-bottom:1.4rem;">Tell us about your project and we'll help you design and build the right software. You can reach us about:</p>
+            <ul class="chip-grid mb-2" style="margin-bottom:1.5rem;">
+              <li class="chip">Custom software</li>
+              <li class="chip">Web &amp; mobile apps</li>
+              <li class="chip">HRMS</li>
+              <li class="chip">CRM</li>
+              <li class="chip">ERP</li>
+              <li class="chip">AI</li>
+              <li class="chip">Cloud</li>
+              <li class="chip">Other software needs</li>
+            </ul>
             <div class="contact-card mb-2">
               <h3>Contact details</h3>
               <ul class="contact-list">
@@ -68,33 +81,33 @@
             </div>
             <div class="contact-card">
               <h3>Looking for our HRIS / EIS demo?</h3>
-              <p>Use the HRIS / EIS demo request form below, or explore the product first.</p>
+              <p>Use the demo request form below, or explore the HRIS / EIS product.</p>
               <p class="mt-1"><a class="btn btn-secondary" href="../hris-eis/">Explore HRIS / EIS</a></p>
             </div>
           </div>
 
           <div class="contact-card">
             <h3>Send us a message</h3>
-            <form data-validate data-mailto="abajpai@northerngeek.in" data-subject="NorthernGeek - New enquiry" novalidate>
+            <form data-validate action="https://formsubmit.co/abajpai@northerngeek.in" method="POST">
               <div class="form-grid">
                 <div class="form-group">
                   <label for="cf-name">Full Name *</label>
-                  <input id="cf-name" name="fullName" type="text" required>
+                  <input id="cf-name" name="name" type="text" required autocomplete="name">
                   <span class="form-error">Please enter your name.</span>
                 </div>
                 <div class="form-group">
                   <label for="cf-email">Email *</label>
-                  <input id="cf-email" name="email" type="email" required>
+                  <input id="cf-email" name="email" type="email" required autocomplete="email">
                   <span class="form-error">Please enter a valid email.</span>
                 </div>
                 <div class="form-group">
                   <label for="cf-phone">Phone</label>
-                  <input id="cf-phone" name="phone" type="tel">
+                  <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
                   <span class="form-error">Please enter a valid phone number.</span>
                 </div>
                 <div class="form-group">
                   <label for="cf-company">Company</label>
-                  <input id="cf-company" name="company" type="text">
+                  <input id="cf-company" name="company" type="text" autocomplete="organization">
                 </div>
                 <div class="form-group full">
                   <label for="cf-message">Message *</label>
@@ -102,9 +115,12 @@
                   <span class="form-error">Please enter a message.</span>
                 </div>
               </div>
+              <input type="hidden" name="_subject" value="New NorthernGeek Website Inquiry">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://northerngeek.in/thanks">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
               <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
-              <p class="form-ok form-note" style="display:none;"></p>
-              <p class="form-note">This form opens your email app with your message ready to send — no data is stored on our server.</p>
+              <p class="form-note">By submitting this form, you agree to our <a href="../privacy-policy/">Privacy Policy</a>. We use your details only to respond to your enquiry.</p>
             </form>
           </div>
         </div>
@@ -120,7 +136,7 @@
             <h2 class="section-title">Request a demo of NorthernGeek HRIS / EIS</h2>
             <p class="section-sub">Schedule a personalised walkthrough tailored to your business needs.</p>
           </div>
-          <form data-validate data-mailto="sales@northerngeek.in" data-subject="Demo Request - NorthernGeek HRIS & EIS" novalidate>
+          <form data-validate action="https://formsubmit.co/abajpai@northerngeek.in" method="POST">
             <div class="form-grid">
               <div class="form-group">
                 <label for="d-name">Full Name *</label>
@@ -163,9 +179,12 @@
                 <textarea id="d-message" name="message" maxlength="500" placeholder="Tell us about your requirements, timeline, or any questions..."></textarea>
               </div>
             </div>
+            <input type="hidden" name="_subject" value="New NorthernGeek HRIS Demo Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://northerngeek.in/thanks/demo">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button class="btn btn-primary btn-lg" type="submit">Send Request</button>
-            <p class="form-ok form-note" style="display:none;"></p>
-            <p class="form-note">This form opens your email app with your request ready to send.</p>
+            <p class="form-note">By submitting this form, you agree to our <a href="../privacy-policy/">Privacy Policy</a>. We use your details only to respond to your demo request.</p>
           </form>
         </div>
       </div>

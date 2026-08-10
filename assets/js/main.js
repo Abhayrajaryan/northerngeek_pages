@@ -110,7 +110,10 @@
     initCarousel(wrap);
   });
 
-  /* ---------- Simple form helpers ---------- */
+  /* ---------- Simple form validation ----------
+     Forms submit natively to the form backend (FormSubmit).
+     This JS only adds friendlier inline validation; it never builds mailto.
+  ---------- */
   function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
   function isValidPhone(v) {
     var d = v.replace(/[\s\-+()]/g, '');
@@ -123,6 +126,7 @@
     if (field.hasAttribute('required') && !field.value.trim()) ok = false;
     else if (field.type === 'email' && field.value.trim() && !isValidEmail(field.value.trim())) ok = false;
     else if (field.name === 'phone' && field.value.trim() && !isValidPhone(field.value.trim())) ok = false;
+    else if ((field.type === 'textarea' || field.tagName === 'TEXTAREA') && field.hasAttribute('maxlength') && field.value.length > Number(field.getAttribute('maxlength'))) ok = false;
     if (group) group.classList.toggle('field-error', !ok);
     return ok;
   }
@@ -138,29 +142,67 @@
     });
     form.addEventListener('submit', function (e) {
       var allOk = true;
-      fields.forEach(function (f) { if (!validateField(f)) allOk = false; });
-      if (!allOk) { e.preventDefault(); return; }
-      if (!form.getAttribute('action')) {
-        e.preventDefault();
-        var parts = [];
-        fields.forEach(function (f) {
-          var group = f.closest('.form-group');
-          var labelEl = group ? group.querySelector('label') : null;
-          if (f.type !== 'submit' && f.name) {
-            parts.push((labelEl ? labelEl.textContent.replace(/\*/g, '').trim() : f.name) + ': ' + (f.value || 'Not specified'));
-          }
-        });
-        var to = form.getAttribute('data-mailto') || '';
-        if (to) {
-          var subject = form.getAttribute('data-subject') || 'NorthernGeek enquiry';
-          var body = encodeURIComponent(parts.join('\n'));
-          window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + body;
-          var note = form.querySelector('.form-ok');
-          if (note) { note.textContent = 'Opening your email app… Please hit send to complete your message.'; note.style.display = 'block'; }
-        }
-      }
+      fields.forEach(function (f) {
+        // Re-validate but ignore the honeypot
+        if (f.name !== '_honey' && !validateField(f)) allOk = false;
+      });
+      if (!allOk) e.preventDefault();
+      // Otherwise let the browser perform the native POST to FormSubmit.
     });
   });
+
+  /* ---------- Accessible modal ----------
+     data-modal attribute on a trigger opens the modal whose id it targets.
+     Close: .modal-close button, Escape key, click on backdrop. Focus moves
+     into the modal and is trapped while open, then restored.
+  ---------- */
+  function openModal(modal) {
+    var lastFocus = document.activeElement;
+    modal.classList.add('active');
+    document.body.classList.add('modal-open');
+    modal.setAttribute('aria-hidden', 'false');
+    var first = modal.querySelector('input, select, textarea, button, [href]');
+    if (first) first.focus();
+    modal._lastFocus = lastFocus;
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+    modal.setAttribute('aria-hidden', 'true');
+    if (modal._lastFocus && modal._lastFocus.focus) modal._lastFocus.focus();
+  }
+
+  document.querySelectorAll('[data-modal-open]').forEach(function (trigger) {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id = trigger.getAttribute('data-modal-open');
+      var modal = document.getElementById(id);
+      if (modal) openModal(modal);
+    });
+  });
+
+  document.querySelectorAll('.modal').forEach(function (modal) {
+    modal.setAttribute('aria-hidden', 'true');
+    var closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) closeBtn.addEventListener('click', function () { closeModal(modal); });
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal(modal);
+    });
+    // Focus trap
+    modal.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closeModal(modal); return; }
+      if (e.key !== 'Tab' || !modal.classList.contains('active')) return;
+      var focusables = modal.querySelectorAll('input, select, textarea, button, [href], [tabindex]:not([tabindex="-1"])');
+      if (!focusables.length) return;
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  });
+
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
