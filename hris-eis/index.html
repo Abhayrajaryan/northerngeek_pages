@@ -214,93 +214,70 @@
       </div>
     </section>
 
-    <!-- ================= SECURITY & INTEGRATIONS ================= -->
-    <section class="section" id="security">
+
+    <!-- ================= DEMO REQUEST ================= -->
+    <section class="section soft" id="demo">
       <div class="container">
-        <div class="section-head center" style="margin-left:auto;margin-right:auto;text-align:center;">
-          <span class="eyebrow">Security &amp; Integrations</span>
-          <h2 class="section-title">Enterprise-grade protection that connects with your tools</h2>
-          <p class="section-sub">Your data is safe. Your existing tools still work.</p>
-        </div>
-        <div class="grid grid-3">
-          <div class="card"><h3>AES-256 Encryption</h3><p>Data is encrypted at rest and in transit.</p></div>
-          <div class="card"><h3>Role Based Access Control</h3><p>Granular permissions for every role.</p></div>
-          <div class="card"><h3>Full Audit Trails</h3><p>Every action is logged and reviewable.</p></div>
-          <div class="card"><h3>99.9% Uptime SLA</h3><p>Hosted on AWS / GCP for reliability.</p></div>
-          <div class="card"><h3>Regular Penetration Testing</h3><p>Ongoing security testing and reviews.</p></div>
-          <div class="card"><h3>GDPR &amp; Indian DPDP Compliant</h3><p>Built to meet data protection regulations.</p></div>
-        </div>
-        <div class="section-head center mt-2" style="margin:2rem auto 1.25rem;text-align:center;">
-          <h3 style="font-size:1.3rem;">Integrations</h3>
-        </div>
-        <div class="chip-grid" style="justify-content:center;">
-          <span class="chip">Google Workspace</span>
-          <span class="chip">Microsoft 365</span>
-          <span class="chip">Slack</span>
-          <span class="chip">Zapier</span>
-          <span class="chip">QuickBooks</span>
-          <span class="chip">Zoho Books</span>
-          <span class="chip">TallyPrime</span>
-          <span class="chip">Razorpay</span>
-          <span class="chip">Biometric Devices</span>
-          <span class="chip">REST APIs</span>
-          <span class="chip">Webhooks</span>
-          <span class="chip">SSO / SAML</span>
+        <div class="contact-card" style="max-width:820px;margin:0 auto;">
+          <div class="section-head center" style="margin:0 auto 1.5rem;text-align:center;">
+            <span class="eyebrow">HRIS / EIS</span>
+            <h2 class="section-title">Request a demo of NorthernGeek HRIS / EIS</h2>
+            <p class="section-sub">Schedule a personalized walkthrough tailored to your business needs.</p>
+          </div>
+          <form data-validate action="https://formsubmit.co/abajpai@northerngeek.in" method="POST">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="d-name">Full Name *</label>
+                <input id="d-name" name="fullName" type="text" required>
+                <span class="form-error">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label for="d-company">Company Name *</label>
+                <input id="d-company" name="companyName" type="text" required>
+                <span class="form-error">Please enter your company name.</span>
+              </div>
+              <div class="form-group">
+                <label for="d-email">Business Email *</label>
+                <input id="d-email" name="email" type="email" required>
+                <span class="form-error">Please enter a valid email.</span>
+              </div>
+              <div class="form-group">
+                <label for="d-phone">Phone Number *</label>
+                <input id="d-phone" name="phone" type="tel" required>
+                <span class="form-error">Please enter a valid phone number.</span>
+              </div>
+              <div class="form-group">
+                <label for="d-size">Company Size *</label>
+                <select id="d-size" name="companySize" required>
+                  <option value="" disabled selected>Select size</option>
+                  <option>1-10 Employees</option>
+                  <option>11-50 Employees</option>
+                  <option>51-200 Employees</option>
+                  <option>201-500 Employees</option>
+                  <option>500+ Employees</option>
+                </select>
+                <span class="form-error">Please select your company size.</span>
+              </div>
+              <div class="form-group">
+                <label for="d-industry">Industry</label>
+                <input id="d-industry" name="industry" type="text" placeholder="e.g. Manufacturing, Healthcare">
+              </div>
+              <div class="form-group full">
+                <label for="d-message">Requirements / Message</label>
+                <textarea id="d-message" name="message" maxlength="500" placeholder="Tell us about your requirements, timeline, or any questions..."></textarea>
+              </div>
+            </div>
+            <input type="hidden" name="_subject" value="New NorthernGeek HRIS Demo Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="/thanks/demo">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn-primary btn-lg" type="submit">Send Request</button>
+            <p class="form-note">By submitting this form, you agree to our <a href="../privacy-policy/">Privacy Policy</a>. We use your details only to respond to your demo request.</p>
+          </form>
         </div>
       </div>
     </section>
 
-
-    <!-- ================= FAQ ================= -->
-    <section class="section soft" id="faq">
-      <div class="container">
-        <div class="section-head center" style="margin-left:auto;margin-right:auto;text-align:center;">
-          <span class="eyebrow">FAQ</span>
-          <h2 class="section-title">Quick answers</h2>
-          <p class="section-sub">Common questions about our HRIS &amp; EIS platform.</p>
-        </div>
-        <div style="max-width:760px;margin:0 auto;">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">What is HRIS and how does it help?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><p>HRIS manages employee data, attendance, payroll, leave, recruitment &amp; more in one system. Eliminates spreadsheets, reduces errors, ensures compliance, and gives real-time workforce visibility.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Can it be customised for my industry?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><p>Yes. We configure modules, workflows, and reports for manufacturing, healthcare, education, IT, retail, logistics, and more.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Is it cloud-based or on-premise?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><p>Cloud-based SaaS by default. Dedicated hosting and on-premise options also available.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">How secure is the platform?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><p>AES-256 encryption, role-based access, audit trails, penetration testing, 99.9% uptime SLA, and GDPR/Indian DPDP compliance.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">How long does implementation take?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><p>2–4 weeks. We handle data migration, configuration, and staff training.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Does it support Indian statutory compliance?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><p>Built-in support for PF, ESI, PT, TDS, Gratuity, Bonus, and more. Rules update automatically.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FINAL CTA ================= -->
-    <section class="section">
-      <div class="container">
-        <div class="cta-band">
-          <h2>Ready to transform your HR operations?</h2>
-          <p>Schedule a personalised demo walkthrough tailored to your business needs.</p>
-          <div class="cta-actions">
-            <button type="button" class="btn btn-primary btn-lg" data-modal-open="demoModal">Request a Free Demo</button>
-            <a class="btn btn-secondary btn-lg" href="../contact/">Contact Us</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
 
