@@ -12,6 +12,9 @@
         next.name = "_next";
         form.appendChild(next);
       }
+      // Resolve "thanks/" one directory above the current page (e.g. /site/contact/ -> /site/thanks/).
+      // Using the URL constructor lets the browser do the relative resolution so this works
+      // regardless of hosting root (custom domain, GitHub Pages project subpath, local dev, etc.)
       next.value = new URL("../thanks/", window.location.href).href;
     });
   }
